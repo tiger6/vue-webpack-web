@@ -1,0 +1,41 @@
+export const headList = [{
+	"url": "https://www.douban.com",
+	"dict": '{"from":"top-nav-click-main","uid":"0"}',
+	"name": '豆瓣'
+}, {
+	"url": "https://book.douban.com",
+	"dict": '{"from":"top-nav-click-book","uid":"0"}',
+	"name": '读书'
+}, {
+	"url": "https://movie.douban.com",
+	"dict": '{"from":"top-nav-click-movie","uid":"0"}',
+	"name": '电影'
+}, {
+	"url": "https://music.douban.com",
+	"dict": '{"from":"top-nav-click-music","uid":"0"}',
+	"name": '音乐'
+}, {
+	"url": "https://www.douban.com/location",
+	"dict": '{"from":"top-nav-click-location","uid":"0"}',
+	"name": '同城'
+}, {
+	"url": "https://www.douban.com/group",
+	"dict": '{"from":"top-nav-click-group","uid":"0"}',
+	"name": '小组'
+}, {
+	"url": "https://read.douban.com/?dcs=top-nav&dcm=douban",
+	"dict": '{"from":"top-nav-click-read","uid":"0"}',
+	"name": '阅读'
+}, {
+	"url": "https://douban.fm/?from_=shire_top_nav",
+	"dict": '{"from":"top-nav-click-fm","uid":"0"}',
+	"name": 'FM'
+}, {
+	"url": "https://dongxi.douban.com/?dcs=top-nav&dcm=douban",
+	"dict": '{"from":"top-nav-click-commodity","uid":"0"}',
+	"name": '东西'
+}, {
+	"url": "https://market.douban.com/?utm_campaign=douban_top_nav&utm_source=douban&utm_medium=pc_web",
+	"dict": '{"from":"top-nav-click-market","uid":"0"}',
+	"name": '市集'
+}]

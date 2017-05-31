@@ -1,0 +1,34 @@
+export const tipList = [{
+	"url": "https://music.douban.com/artists/",
+	"name": "音乐人"
+}, {
+	"url": "https://www.douban.com/wetware/",
+	"name": "潮潮豆瓣音乐周"
+}, {
+	"url": "https://music.douban.com/artists/royalty/",
+	"name": "金羊毛计划"
+}, {
+	"url": "https://music.douban.com/topics/",
+	"name": "专题"
+}, {
+	"url": "https://music.douban.com/chart",
+	"name": "排行榜"
+}, {
+	"url": "https://music.douban.com/tag/",
+	"name": "分类浏览"
+}, {
+	"url": "https://music.douban.com/review/latest/",
+	"name": "音乐人"
+}, {
+	"url": "https://music.douban.com/artists/",
+	"name": "乐评"
+}, {
+	"url": "https://douban.fm/?from_=music_nav",
+	"name": "豆瓣FM"
+}, {
+	"url": "https://douban.fm/explore/songlists/",
+	"name": "歌单"
+}, {
+	"url": "https://artist.douban.com/abilu/2016",
+	"name": "阿比鹿音乐奖"
+}]
