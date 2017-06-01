@@ -6,6 +6,7 @@
 				<el-row :gutter="20">
 				  <el-col :span="15"><div class="grid-content bg-purple">
 					  <home-banner></home-banner>
+					  <book-top></book-top>
 				  </div></el-col>
 				  <el-col :span="9"><div class="grid-content bg-purple">
 				  	<div class="join">
@@ -21,9 +22,10 @@
 				            <h2><a href="/labels/" class="primary-link" target="_blank">1006</a></h2>
 				            <p>厂牌</p>
 				        </div>
-				        <div class="clearfix"></div>
+				        <div class="clear"></div>
 				        <el-button type="primary">我要加入</el-button>
 				    </div>
+				    <class-list></class-list>
 				  </div></el-col>
 				</el-row>
 			</div>
@@ -34,35 +36,25 @@
 import headTop from '../components/header'
 import footBottom from '../components/footer'
 import homeBanner from '../components/home/banner'
-import {mapState, mapActions} from 'vuex'
+import classList from '../components/home/classify'
+import bookTop from '../components/home/bookTop'
 	export default{
 		name:'home',
 		data(){
 			return{
 				type: '1',
 		      	footer: {
-		        	title: `${this.$t('infoMore')}`,
 		        	url: 'http://www.douban.com'
 		      	}
 			}
 		},
 		components:{
-			headTop,footBottom,homeBanner
+			headTop,footBottom,homeBanner,classList,bookTop
 		},
 		methods:{
-			...mapActions(['getBookList']),
 			cLocaleInfo(msg){
 				// 动态执行语言切换
-				this.footer.title=`${this.$t('infoMore')}`
-			}
-		},
-		mounted(){
-            //获取用户信息
-            this.getBookList();
-        },
-		computed:{
-			bookList(){
-				return this.$store.getters.getBookList;
+				// this.footer.title=`${this.$t('infoMore')}`
 			}
 		}
 	}
@@ -78,10 +70,10 @@ import {mapState, mapActions} from 'vuex'
 	    margin-bottom: 30px;
 	    .join-block {
 		    float: left;
-		    width: 102px;
+		    width: 32%;
 		    margin-right: 2px;
 		    height: 57px;
-		    background-color: #e2e2e2;
+		    background-color: #F5F7F8;
 		    text-align: center;
 		     h2 {
 			    margin: 9px 0 0 0;
@@ -98,7 +90,7 @@ import {mapState, mapActions} from 'vuex'
 		}
 		button{
 			margin-top: 3px;
-			width: 310px;
+			width: 98%;
 		}
 	}
 	h2 {

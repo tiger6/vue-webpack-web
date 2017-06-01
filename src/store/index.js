@@ -9,7 +9,8 @@ Vue.use(Vuex)
 const state = {
 	bookList: [],
 	eventItem: {},
-	isLoading: false
+	isLoading: false,
+	blLoading: true
 }
 export default new Vuex.Store({
 	state,

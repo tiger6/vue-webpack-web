@@ -10,14 +10,16 @@ export default {
 			eventList = payload.events,
 			bList = [];
 		eventList.forEach((key) => {
-			srcObj = {};
-			srcObj['desc'] = key.content;
-			srcObj['src'] = key.image_hlarge;
-			srcObj['title'] = key.title;
-			srcObj['url'] = '/Detail/' + key.id;
-			bList.push(srcObj);
-		})
-		state.bookList = bList;
+				srcObj = {};
+				srcObj['desc'] = key.content;
+				srcObj['src'] = key.image_hlarge;
+				srcObj['title'] = key.title;
+				srcObj['url'] = '/Detail/' + key.id;
+				bList.push(srcObj);
+			})
+			// console.log(eventList);
+		state.bookList = eventList;
+		state.blLoading = false;
 	},
 
 	[BOOK_DETAIL](state, payload) {

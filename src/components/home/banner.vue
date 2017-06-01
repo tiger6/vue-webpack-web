@@ -10,7 +10,7 @@
 	</div>
 </template>
 <script>
-import * as banners from '../../service/tempdata/bannerList'
+import * as banners from '../../service/tempdata/home/bannerList'
 	export default{
 		 data(){
 		 	return{

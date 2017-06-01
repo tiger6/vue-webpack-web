@@ -1,41 +1,51 @@
 export const headList = [{
 	"url": "https://www.douban.com",
 	"dict": '{"from":"top-nav-click-main","uid":"0"}',
-	"name": '豆瓣'
+	"name": '豆瓣',
+	'enName': 'Douban'
 }, {
 	"url": "https://book.douban.com",
 	"dict": '{"from":"top-nav-click-book","uid":"0"}',
-	"name": '读书'
+	"name": '读书',
+	'enName': 'Book'
 }, {
 	"url": "https://movie.douban.com",
 	"dict": '{"from":"top-nav-click-movie","uid":"0"}',
-	"name": '电影'
+	"name": '电影',
+	'enName': 'Movie'
 }, {
 	"url": "https://music.douban.com",
 	"dict": '{"from":"top-nav-click-music","uid":"0"}',
-	"name": '音乐'
+	"name": '音乐',
+	'enName': 'Music'
 }, {
 	"url": "https://www.douban.com/location",
 	"dict": '{"from":"top-nav-click-location","uid":"0"}',
-	"name": '同城'
+	"name": '同城',
+	'enName': 'Location'
 }, {
 	"url": "https://www.douban.com/group",
 	"dict": '{"from":"top-nav-click-group","uid":"0"}',
-	"name": '小组'
+	"name": '小组',
+	'enName': 'Group'
 }, {
 	"url": "https://read.douban.com/?dcs=top-nav&dcm=douban",
 	"dict": '{"from":"top-nav-click-read","uid":"0"}',
-	"name": '阅读'
+	"name": '阅读',
+	'enName': 'Read'
 }, {
 	"url": "https://douban.fm/?from_=shire_top_nav",
 	"dict": '{"from":"top-nav-click-fm","uid":"0"}',
-	"name": 'FM'
+	"name": 'FM',
+	'enName': 'FM'
 }, {
 	"url": "https://dongxi.douban.com/?dcs=top-nav&dcm=douban",
 	"dict": '{"from":"top-nav-click-commodity","uid":"0"}',
-	"name": '东西'
+	"name": '东西',
+	'enName': 'Commodity'
 }, {
 	"url": "https://market.douban.com/?utm_campaign=douban_top_nav&utm_source=douban&utm_medium=pc_web",
 	"dict": '{"from":"top-nav-click-market","uid":"0"}',
-	"name": '市集'
+	"name": '市集',
+	'enName': 'Market'
 }]

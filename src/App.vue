@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-  	<!-- <div v-transfer-dom>
-          <loading v-model="isLoading"></loading>
-        </div> -->
     <transition name="router-fade" mode="out-in">
       <router-view></router-view>
     </transition>

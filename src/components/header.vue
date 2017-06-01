@@ -3,25 +3,34 @@
 		<!-- head content -->
 		<div class="bd">
 			<div class="top-nav-info">
-			  <a href="https://www.douban.com/accounts/login?source=book" class="nav-login" rel="nofollow">登录</a>
-			  <a href="https://www.douban.com/accounts/register?source=book" class="nav-register" rel="nofollow">注册</a>
+			  <a href="javascript:;" class="nav-login" rel="nofollow">{{$t('login')}}</a>
+			  <a href="javascript:;" class="nav-register" rel="nofollow">{{$t('register')}}</a>
 			</div>
 			<div class="top-nav-doubanapp">
-			  <a href="https://www.douban.com/doubanapp/app?channel=top-nav" class="lnk-doubanapp">下载豆瓣客户端</a>
+			  	<el-dropdown @command="changeLocale">
+					  <span class="el-dropdown-link">
+					    {{$t('lang')}}<i class="el-icon-caret-bottom el-icon--right"></i>
+					  </span>
+				  <el-dropdown-menu slot="dropdown">
+				    <el-dropdown-item command="zh">{{menus.zh}}</el-dropdown-item>
+				    <el-dropdown-item  command="en">{{menus.en}}</el-dropdown-item>
+				  </el-dropdown-menu>
+				</el-dropdown>
 			</div>
 
 			<div class="global-nav-items">
 			  <ul>
 			    <li class="" v-for="item in headInfoList">
-			      <a :href="item.url" target="_blank" :data-moreurl-dict="item.dict">{{item.name}}</a>
+			      <a :href="item.url" target="_blank" :data-moreurl-dict="item.dict" v-html="localeInfo==='en'?item.enName:item.name"></a>
 			    </li>
 			    <li>
 				    <el-dropdown @command="handleCommand">
 					  <span class="el-dropdown-link">
-					    更多<i class="el-icon-caret-bottom el-icon--right"></i>
+					    {{$t('more')}}<i class="el-icon-caret-bottom el-icon--right"></i>
 					  </span>
 					  <el-dropdown-menu slot="dropdown">
-					    <el-dropdown-item v-for="items in moreList" :command="items.url" v-loading.fullscreen.lock="loading">{{items.name}}</el-dropdown-item>
+					    <el-dropdown-item  command="https://moment.douban.com">{{$t('moment')}}</el-dropdown-item>
+					    <el-dropdown-item  command="https://ypy.douban.com">{{$t('ypy')}}</el-dropdown-item>
 					  </el-dropdown-menu>
 					</el-dropdown>
 			    </li>
@@ -33,7 +42,7 @@
 		  <div class="nav-wrap">
 			  <div class="nav-primary">
 			    <div class="nav-logo">
-			      <a href="https://music.douban.com">豆瓣音乐</a>
+			      <a href="javascript:;">{{$t('douMusic')}}</a>
 			    </div>
 			    <div class="nav-search">
 			    	<div class="inp">
@@ -41,17 +50,6 @@
 					    	<el-button slot="append" icon="search"></el-button>
 					  	</el-input>
 			    	</div>
-			      <!-- <form action="https://music.douban.com/subject_search" method="get" _lpchecked="1">
-			        <fieldset>
-			          <legend>搜索：</legend>
-			          <label for="inp-query">
-			          </label>
-			          <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="唱片名、表演者、条码、ISRC" value="" autocomplete="off"></div>
-			          <div class="inp-btn"><input type="submit" value="搜索"></div>
-			          <input type="hidden" name="cat" value="1003">
-			        </fieldset>
-			      </form> -->
-
 			    </div>
 			  </div>
 		  </div>
@@ -70,73 +68,40 @@
 	</div>
 </template>
 <script>
-import {setStore} from '../common/util'
-import * as heads from '../service/tempdata/headList'
-import * as tips from '../service/tempdata/headTipList'
+import {setStore,getStore} from '../common/util'
+import * as heads from '../service/tempdata/home/headList'
+import * as tips from '../service/tempdata/home/headTipList'
 
 export default{
 	data(){
 		return {
-			showMenus: false,
-			routePath:'',
 			headInfoList:heads.headList,
 			headTipList:tips.tipList,
 			input5: '',
-			moreList:[
-				{"url":"https://moment.douban.com","dict":'{"from":"top-nav-click-moment","uid":"0"}','name':'一刻'},
-				{"url":"https://ypy.douban.com","dict":'{"from":"top-nav-click-ypy","uid":"0"}','name':'豆瓣摄影'}
-			],
 			menus: {
 		        'zh': `${this.$t('中文')}`,
 		        'en': `${this.$t('English')}`
 		    },
-		    activeIndex: '1',
-		    loading:false
+		    localeInfo:getStore('lang')?getStore('lang'):'zh'
 		}
 	},
 	methods:{
-		 onClickMore () {
-	      this.showMenus = true
-	    },
 		changeLocale (locale) {
+			this.localeInfo=locale;
 			this.$i18n.locale=locale;
 			setStore('lang',locale);
-			this.$emit('cLocale',locale);
+			// this.$emit('cLocale',locale);
 	    },
-	    handleSelect(key, keyPath) {
-       	 	console.log(key, keyPath);
-        },
-        handleOpen(key,keyPath){
-        	console.log(key, keyPath);
-        },
-        handleClose(key,keyPath){
-        	console.log(key, keyPath);
-        },
         handleCommand(command){
-        	this.$message(command);
-        	this.loading=true;
-        	setTimeout(()=>{
-        		this.loading=false
-        	},1000)
+        	// this.$message(command);
+        	window.open(command);
         }
 	},
 	mounted(){
-		this.routePath = this.$route.path;
 		// console.log(param);	
 	},
 	computed:{
-		leftOptions () {
-	      return {
-	        showBack: this.routePath !== '/'
-	      }
-	    },
-	    title(){
-	    	if(this.routePath==="/") return this.$t('home')
-	    	if(this.routePath){
-	    		const parts = this.routePath.split('/')
-	    		return parts[1];
-	    	} 
-	    }
+
 	}
 }
 </script>
