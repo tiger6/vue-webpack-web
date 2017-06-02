@@ -70,7 +70,7 @@ import bookTop from '../components/home/bookTop'
 	    margin-bottom: 30px;
 	    .join-block {
 		    float: left;
-		    width: 32%;
+		    width: 32.5%;
 		    margin-right: 2px;
 		    height: 57px;
 		    background-color: #F5F7F8;
@@ -90,7 +90,7 @@ import bookTop from '../components/home/bookTop'
 		}
 		button{
 			margin-top: 3px;
-			width: 98%;
+			width: 99%;
 		}
 	}
 	h2 {
