@@ -32,11 +32,6 @@ module.exports = {
                 target: 'https://api.douban.com',
                 secure: false,
                 changeOrigin: true,
-            },
-            '/view': {
-                target: 'https://img1.doubanio.com',
-                secure: false,
-                changeOrigin: true
             }
         },
         // CSS Sourcemaps off by default because relative paths are "buggy"
